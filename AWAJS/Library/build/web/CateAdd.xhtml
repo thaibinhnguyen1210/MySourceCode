@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Them Loai Sach </title>
+    </h:head>
+    <h:body>
+        <center>
+            <h2> Them loai sach</h2>
+            <fcore:view>
+                <h:form>
+                    <h:panelGrid border="" cellpadding="20" cellspacing="20" columns="2">
+                        <h:outputLabel value="Ma Loai"/>
+                        <h:inputText value="#{categoryManagedBean.maLoai}" required="true" requiredMessage="Nhap Ma Loai" id="forMaLoai">
+                            <h:message for="forMaLoai"/>
+                        </h:inputText>
+                        <h:outputLabel value="Ten Loai"/>
+                        <h:inputText value="#{categoryManagedBean.tenLoai}" required="true" requiredMessage="Nhap Ten Loai" id="forTenLoai">
+                            <h:message for="forTenLoai"/>
+                        </h:inputText>
+                       
+                        <h:commandLink value="Add" action="CateListing" actionListener="#{categoryManagedBean.AddCate()}"></h:commandLink>
+                    </h:panelGrid>
+                </h:form>
+            </fcore:view>
+        </center>
+    </h:body>
+</html>
+

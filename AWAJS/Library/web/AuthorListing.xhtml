@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Hien thi cac tac gia</title>
+    </h:head>
+    <h:body>       
+        <center>
+            <fcore:view>
+                <h:form>
+                    <h:dataTable var="listing" value="#{authorManagedBean.GetAllAuth()}" border="1" cellpadding="2" cellspacing="2">
+                        <h:column>
+                            <fcore:facet name="header">MaTG</fcore:facet>
+                            <h:inputText value="#{listing.maTG}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">TenTacGia</fcore:facet>
+                            <h:inputText value="#{listing.tentacgia}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">DiaChi</fcore:facet>
+                            <h:inputText value="#{listing.diachi}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">SDT</fcore:facet>
+                            <h:inputText value="#{listing.sdt}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">Email</fcore:facet>
+                            <h:inputText value="#{listing.email}"></h:inputText>
+                        </h:column>                                                                       
+                        <h:column>
+                            <fcore:facet name="header">Edit</fcore:facet>   
+                            <h:commandLink action="AuthorEdit" actionListener="#{authorManagedBean.EditAuth1()}" value="Edit">
+                                <fcore:param name="maTG" value="#{listing.maTG}"/>
+                            </h:commandLink>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">Delete</fcore:facet>    
+                            <h:commandLink action="AuthorListing" actionListener="#{authorManagedBean.DeleteAuth()}" value="Delete" onclick="return confirm('Ban co chac muon xoa tac gia nay khong?')">
+                                <fcore:param name="maTG" value="#{listing.maTG}"/>
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                    <h:commandLink value="Add" action="AuthorAdd"/>
+                </h:form>
+            </fcore:view>
+        </center>
+    </h:body>
+</html>
+

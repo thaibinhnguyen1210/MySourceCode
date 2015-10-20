@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Cap nhat thong tin Nha Xuat Ban</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h2> Cap nhat thong tin Nha Xuat Ban</h2>
+            <fcore:view>
+                <h:form>
+                    <h:panelGrid border="" cellpadding="20" cellspacing="20" columns="2">
+                        <h:outputLabel value="Ma NXB"/>
+                        <h:inputText value="#{publisherManagedBean.maNXB}" required="true" requiredMessage="Nhap Ma NXB" id="forMaNXB">
+                            <h:message for="forMaNXB"/>
+                        </h:inputText>
+                        <h:outputLabel value="Ten NXB"/>
+                        <h:inputText value="#{publisherManagedBean.tenNXB}" required="true" requiredMessage="Nhap Ma Loai" id="forTenNXB">
+                            <h:message for="forTenNXB"/>
+                        </h:inputText>
+                        <h:outputLabel value="Dia Chi"/>
+                        <h:inputText value="#{publisherManagedBean.diachi}">                            
+                        </h:inputText>
+                        <h:outputLabel value="So Dien Thoai"/>
+                        <h:inputText value="#{publisherManagedBean.sdt}" />
+                        <h:outputLabel value="Email"/>
+                        <h:inputText value="#{publisherManagedBean.email}" />                        
+                        <h:commandLink value="Update" action="PublisherListing" actionListener="#{publisherManagedBean.EditPub}">
+                            <fcore:param name="maNXB" value="#{publisherManagedBean.maNXB}"/>
+                        </h:commandLink>
+                    </h:panelGrid>
+                </h:form>
+            </fcore:view>
+        </center>
+    </h:body>
+</html>
+

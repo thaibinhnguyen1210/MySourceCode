@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Hien thi cac cuon sach</title>
+    </h:head>
+    <h:body>       
+        <center>
+            <fcore:view>
+                <h:form>
+                    <h:dataTable var="listing" value="#{bookManagedBean.GetAllBook()}" border="1" cellpadding="2" cellspacing="2">
+                        <h:column>
+                            <fcore:facet name="header">MaSach</fcore:facet>
+                            <h:inputText value="#{listing.maSach}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">MaLoai</fcore:facet>
+                            <h:inputText value="#{listing.maLoai}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">TenSach</fcore:facet>
+                            <h:inputText value="#{listing.tenSach}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">TomTat</fcore:facet>
+                            <h:inputText value="#{listing.tomTat}"></h:inputText>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">MaTacGia</fcore:facet>
+                            <h:inputText value="#{listing.maTG}"></h:inputText>
+                        </h:column>
+                         <h:column>
+                            <fcore:facet name="header">MaNXB</fcore:facet>
+                            <h:inputText value="#{listing.maNXB}"></h:inputText>
+                        </h:column>                                               
+                        <h:column>
+                            <fcore:facet name="header">Edit</fcore:facet>   
+                            <h:commandLink action="BookEdit" actionListener="#{bookManagedBean.EditBook1()}" value="Edit">
+                                <fcore:param name="maSach" value="#{listing.maSach}"/>
+                            </h:commandLink>
+                        </h:column>
+                        <h:column>
+                            <fcore:facet name="header">Delete</fcore:facet>    
+                            <h:commandLink action="BookListing" actionListener="#{bookManagedBean.DeleteBook()}" value="Delete" onclick="return confirm('Ban co chac muon xoa sach nay khong?')">
+                                <fcore:param name="maSach" value="#{listing.maSach}"/>
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                    <h:commandLink value="Add Book" action="BookAdd"/>
+                </h:form>
+            </fcore:view>
+        </center>
+    </h:body>
+</html>
+

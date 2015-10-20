@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Cap nhat thong tin Tac Gia</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h2>Cap nhat thong tin Tac Gia</h2>
+            <fcore:view>
+                <h:form>
+                    <h:panelGrid border="" cellpadding="20" cellspacing="20" columns="2">
+                        <h:outputLabel value="Ma TG"/>
+                        <h:inputText value="#{authorManagedBean.maTG}" required="true" requiredMessage="Nhap Ma TG" id="forMaTG">
+                            <h:message for="forMaTG"/>
+                        </h:inputText>
+                        <h:outputLabel value="Ten TG"/>
+                        <h:inputText value="#{authorManagedBean.tentacgia}" required="true" requiredMessage="Nhap Ten TG" id="forTenTG">
+                            <h:message for="forTenTG"/>
+                        </h:inputText>
+                        <h:outputLabel value="Dia Chi"/>
+                        <h:inputText value="#{authorManagedBean.diachi}">                            
+                        </h:inputText>
+                        <h:outputLabel value="So Dien Thoai"/>
+                        <h:inputText value="#{authorManagedBean.sdt}" />
+                        <h:outputLabel value="Email"/>
+                        <h:inputText value="#{authorManagedBean.email}" />                        
+                        <h:commandLink value="Update" action="AuthorListing" actionListener="#{authorManagedBean.EditAuth}">
+                            <fcore:param name="maTG" value="#{authorManagedBean.maTG}"/>
+                        </h:commandLink>
+                    </h:panelGrid>
+                </h:form>
+            </fcore:view>
+        </center>
+    </h:body>
+</html>
+

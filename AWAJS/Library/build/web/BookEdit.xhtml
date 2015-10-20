@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fcore="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Cap nhat thong tin Sach</title>
+    </h:head>
+    <h:body>
+        <center>
+            <h2> Cap nhat thong tin sach</h2>
+            <fcore:view>
+                <h:form>
+                    <h:panelGrid border="" cellpadding="20" cellspacing="20" columns="2">
+                        <h:outputLabel value="Ma Sach"/>
+                        <h:inputText value="#{bookManagedBean.maSach}" required="true" requiredMessage="Nhap Ma Sach" id="forMaSach">
+                            <h:message for="forMaSach"/>
+                        </h:inputText>
+                        <h:outputLabel value="Ma Loai"/>
+                        <h:inputText value="#{bookManagedBean.maLoai}" required="true" requiredMessage="Nhap Ma Loai" id="forMaLoai">
+                            <h:message for="forMaLoai"/>
+                        </h:inputText>
+                        <h:outputLabel value="Ten Sach"/>
+                        <h:inputText value="#{bookManagedBean.tenSach}" required="true" requiredMessage="Nhap Ten Sach" id="forTenSach">
+                            <h:message for="forTenSach"/>
+                        </h:inputText>
+                        <h:outputLabel value="Tom Tat"/>
+                        <h:inputText value="#{bookManagedBean.tomTat}" />
+                        <h:outputLabel value="Ma Tac Gia"/>
+                        <h:inputText value="#{bookManagedBean.maTG}" />
+                        <h:outputLabel value="Ma Nha Xuat Ban"/>
+                        <h:inputText value="#{bookManagedBean.maNXB}" />
+                        <h:commandLink value="Update" action="BookListing" actionListener="#{bookManagedBean.EditBook}">
+                            <fcore:param name="maSach" value="#{bookManagedBean.maSach}"/>
+                        </h:commandLink>
+                    </h:panelGrid>
+                </h:form>
+            </fcore:view>
+        </center>
+    </h:body>
+</html>
+
